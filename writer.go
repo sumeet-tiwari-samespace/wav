@@ -50,7 +50,7 @@ func (file File) NewWriter(out output) (wr *Writer, err error) {
 
 	chunkFmt := riffChunkFmt{
 		LengthOfHeader: 16,
-		AudioFormat:    7,
+		AudioFormat:    0x0007,
 		NumChannels:    file.Channels,
 		SampleRate:     file.SampleRate,
 		BytesPerSec:    uint32(file.Channels) * file.SampleRate * uint32(file.SignificantBits) / 8,
